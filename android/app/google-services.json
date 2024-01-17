@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195063921079",
+    "project_id": "fir-cs2",
+    "storage_bucket": "fir-cs2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195063921079:android:a034ddc9d23f4275e0d032",
+        "android_client_info": {
+          "package_name": "com.example.case_study_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAWq2sokNaM10ZUEAT91yNDQILA3pUa5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
