@@ -20,6 +20,26 @@ class _RegisterPageState extends State<RegisterPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      // Registration successful, show a dialog
+      // ignore: use_build_context_synchronously
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Registration Successful'),
+            content: Text('Click OK to go to the Homepage screen.'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                  Navigator.of(context).pop(); // Close the register screen
+                },
+              ),
+            ],
+          );
+        },
+      );
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -57,6 +77,12 @@ class _RegisterPageState extends State<RegisterPage> {
             ElevatedButton(
               onPressed: createUserWithEmailAndPassword,
               child: Text('Register'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Go back to Login'),
             ),
           ],
         ),

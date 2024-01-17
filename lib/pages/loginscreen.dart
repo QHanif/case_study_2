@@ -58,6 +58,12 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: signInWithEmailAndPassword,
               child: Text('Login'),
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/register');
+              },
+              child: Text('Go to Register'),
+            ),
           ],
         ),
       ),
