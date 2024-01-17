@@ -65,14 +65,30 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _entryField(String title, TextEditingController controller,
       String? Function(String?)? validator,
-      {bool obscureText = false}) {
-    return TextFormField(
-      controller: controller,
-      obscureText: obscureText,
-      validator: validator,
-      decoration: InputDecoration(
-        labelText: title,
-      ),
+      {bool isPassword = false}) {
+    bool obscureText = isPassword;
+    return StatefulBuilder(
+      builder: (BuildContext context, StateSetter setState) {
+        return TextFormField(
+          controller: controller,
+          obscureText: obscureText,
+          validator: validator,
+          decoration: InputDecoration(
+            labelText: title,
+            suffixIcon: isPassword
+                ? IconButton(
+                    icon: Icon(
+                        obscureText ? Icons.visibility_off : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        obscureText = !obscureText;
+                      });
+                    },
+                  )
+                : null,
+          ),
+        );
+      },
     );
   }
 
@@ -129,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                 _entryField('Email', _controllerEmail, validator.validateEmail),
                 _entryField(
                     'Password', _controllerPassword, validator.validatePassword,
-                    obscureText: true),
+                    isPassword: true),
                 _errorMessage(),
                 _submitButton(),
                 _loginOrRegisterButton(),
