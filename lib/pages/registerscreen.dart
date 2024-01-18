@@ -124,7 +124,10 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _controllerConfirmPassword,
                 obscureText: _isHiddenPassword,
-                // validator: validator.validateRepeatPassword(value, _controllerPassword),
+                validator: (value) {
+                  return validator.validateRepeatPassword(
+                      value, _controllerPassword.text);
+                },
                 decoration: InputDecoration(
                   labelText: 'Confirm Password',
                   suffix: InkWell(
