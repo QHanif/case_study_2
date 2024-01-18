@@ -27,6 +27,7 @@ The case study focus on developing Firebase Authentication. It helps understand 
 
 ## References
 * https://docs.flutter.dev/cookbook/forms/validation
+* https://firebase.google.com/docs/auth/web/manage-users
 * https://www.youtube.com/watch?v=rWamixHIKmQ
 * Class handouts from course instructor: [Dr. Muhamad Sadry Abu Seman](https://github.com/muhdsadry), DIS, KICT, IIUM
   
