@@ -34,7 +34,14 @@ class _LoginPageState extends State<LoginPage> {
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
-        errorMessage = e.message;
+        switch (e.code) {
+          case 'invalid-credential':
+            errorMessage = 'Invalid email/password entered. Please try again.';
+            break;
+          default:
+            errorMessage =
+                'An unknown error occurred with error code: ${e.code}.';
+        }
       });
     }
   }

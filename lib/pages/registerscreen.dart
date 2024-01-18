@@ -58,7 +58,15 @@ class _RegisterPageState extends State<RegisterPage> {
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
-        errorMessage = e.message;
+        switch (e.code) {
+          case 'email-already-in-use':
+            errorMessage =
+                'The account already exists for that email. Login instead.';
+            break;
+          default:
+            errorMessage =
+                'An unknown error occurred with error code: ${e.code}.';
+        }
       });
     }
   }
