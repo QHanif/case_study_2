@@ -1,3 +1,5 @@
+// qoys
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth.dart';
@@ -165,47 +167,4 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Register'),
-//       ),
-//       body: Container(
-//         height: double.infinity,
-//         width: double.infinity,
-//         padding: EdgeInsets.all(20),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             TextField(
-//               controller: _controllerEmail,
-//               decoration: InputDecoration(
-//                 labelText: 'Email',
-//               ),
-//             ),
-//             TextField(
-//               controller: _controllerPassword,
-//               decoration: InputDecoration(
-//                 labelText: 'Password',
-//               ),
-//             ),
-//             Text(errorMessage == '' ? '' : 'Hmm ? $errorMessage'),
-//             ElevatedButton(
-//               onPressed: createUserWithEmailAndPassword,
-//               child: Text('Register'),
-//             ),
-//             TextButton(
-//               onPressed: () {
-//                 Navigator.pop(context);
-//               },
-//               child: Text('Go back to Login'),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
 }
