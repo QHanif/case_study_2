@@ -14,6 +14,14 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
 
+  bool _isHiddenPassword = true;
+
+  void _togglePasswordView() {
+    setState(() {
+      _isHiddenPassword = !_isHiddenPassword;
+    });
+  }
+
   Future<void> signInWithEmailAndPassword() async {
     try {
       await Auth().signInWithEmailAndPassword(
@@ -51,6 +59,12 @@ class _LoginPageState extends State<LoginPage> {
               controller: _controllerPassword,
               decoration: InputDecoration(
                 labelText: 'Password',
+                suffix: InkWell(
+                  onTap: _togglePasswordView,
+                  child: Icon(
+                    _isHiddenPassword ? Icons.visibility : Icons.visibility_off,
+                  ),
+                ),
               ),
             ),
             Text(errorMessage == '' ? '' : 'Hmm ? $errorMessage'),
