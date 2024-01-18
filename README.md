@@ -12,12 +12,13 @@ Fluttered
 ## Group Member Assigned Task
 * Qoys
   * registerscreen.dart
+   * main.dart
 * Zaidi
-  * main.dart
   * homepage.dart
   * validate.dart
 * Azhad
   * auth.dart
+  * firebase_auth setup
 * Saufi
   * loginscreen.dart
   * widgettree.dart
