@@ -12,9 +12,9 @@ Fluttered
 ## Group Member Assigned Task
 * Qoys
   * registerscreen.dart
-   * main.dart
-* Zaidi
   * homepage.dart
+* Zaidi
+  * main.dart
   * validate.dart
 * Azhad
   * auth.dart
